@@ -1,0 +1,48 @@
+body {
+  background: #000;
+  font-family: system-ui;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  margin: 0 0 16px;
+}
+
+span {
+  color: #fff;
+  display: block;
+  line-height: 1.1;
+  padding: 0 12px;
+  position: relative;
+}
+
+span::before {
+  content: var(--content);
+  position: absolute;
+  inset: 0;
+  height: 120px;
+  background: linear-gradient(90deg, var(--start-color), var(--end-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated 9s infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes animated {
+  0%,
+  16.667%,
+  100% {
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 0;
+  }
+}
